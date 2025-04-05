@@ -3,6 +3,7 @@ import express from "express"
 import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
+import route from "./routes/userRoute.js"
 
 //initialize the express app
 const app = express();
@@ -23,3 +24,5 @@ mongoose.connect(MONGOURL).then( ()=>{
         console.log(`server is running on port ${PORT}`)
     })
 }).catch( (error) => console.log(error));
+
+app.use("/api/user",route);
