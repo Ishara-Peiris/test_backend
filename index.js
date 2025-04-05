@@ -17,9 +17,9 @@ const PORT = process.env.PORT || 5000;//IF PORT not default is 5000
 const MONGOURL = process.env.MONGO_URL;
 
 //CONNECT WITH MONGODB
-Mongoose.connect(MONGOURL).then( ()=>{
+mongoose.connect(MONGOURL).then( ()=>{
     console.log("databse connected successful!")
     app.listen(PORT, ()=>{
-        console.log('server is running on port ${PORT}')
+        console.log(`server is running on port ${PORT}`)
     })
-})
+}).catch( (error) => console.log(error));
