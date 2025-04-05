@@ -4,3 +4,6 @@ import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
 
+//initialize the express app
+const app = express();
+
